@@ -2,27 +2,35 @@
 
 Este projeto consiste em um conjunto de painéis interativos desenvolvidos em Streamlit para análise e visualização de dados relacionados à saúde mental no Brasil. O objetivo é criar um atlas nacional que permita a análise das morbidades de internações psiquiátricas, taxas de mortalidade e outros indicadores relevantes, organizados por sexo, idade e cor/raça.
 
-## Obtendo os Dados
+## Configuração Inicial
 
-Os dados utilizados neste projeto estão disponíveis no Hugging Face. Para baixar e utilizar os dados, siga os passos abaixo:
-
-1. Instale as dependências necessárias:
+### 1. Clone o repositório
 ```bash
-pip install huggingface-hub python-dotenv
+git clone https://github.com/seu-usuario/saude-coletiva.git
+cd saude-coletiva
 ```
 
-2. Crie um arquivo `.env` na raiz do projeto com suas credenciais do Hugging Face:
+### 2. Instale as dependências
+```bash
+pip install -r requirements.txt
 ```
+
+### 3. Configure o acesso ao Hugging Face
+1. Crie uma conta no [Hugging Face](https://huggingface.co)
+2. Acesse suas [configurações de token](https://huggingface.co/settings/tokens)
+3. Crie um novo token de acesso
+4. Crie um arquivo `.env` na raiz do projeto com suas credenciais:
+```bash
 HF_USERNAME=seu_usuario
 HF_TOKEN=seu_token
 ```
 
-3. Execute o script de download:
+### 4. Baixe os dados
+Execute o script para baixar os dados do Hugging Face:
 ```bash
 python scripts/hf_data_manager.py --repo-id "feliperafael/saude-coletiva" --action download
 ```
-
-Os arquivos serão baixados para a pasta `data/` do projeto.
+Os arquivos serão baixados automaticamente para a pasta `data/` do projeto.
 
 ## Estrutura do Projeto
 
