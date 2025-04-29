@@ -47,12 +47,13 @@ Para executar o projeto, você precisará ter instalado:
 
 - Python 3.8 ou superior
 - pip (gerenciador de pacotes Python)
+- Docker (opcional, para ambiente isolado)
 
 ## Instalação
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/feliperafael/saude-coletiva-painel.git
 cd saude-coletiva-painel
 ```
 
@@ -68,6 +69,8 @@ pip install -r requirements.txt
 
 ## Como Executar
 
+### Opção 1: Execução Local
+
 Cada painel pode ser executado individualmente usando o comando:
 
 ```bash
@@ -78,6 +81,18 @@ Por exemplo, para executar o painel de Indicadores de Saúde Mental:
 
 ```bash
 streamlit run indicadores_saude_mental.py
+```
+
+### Opção 2: Execução com Docker
+
+1. Construa a imagem:
+```bash
+docker compose build
+```
+
+2. Execute o container:
+```bash
+docker compose up
 ```
 
 ## Estrutura de Dados
@@ -122,6 +137,53 @@ O projeto inclui várias visualizações interativas:
    - Matrizes de correlação
    - Gráficos de dispersão
    - Análises de regressão
+
+### Exemplos de Visualizações
+
+#### 1. Análise de Morbidade
+![Distribuição por Faixa Etária](prints/morbidade_internacoes_02.jpeg)
+*Distribuição de internações por faixa etária*
+
+![Análise por Sexo](prints/morbidade_internacoes_03.jpeg)
+*Distribuição de internações por sexo*
+
+![Análise por Raça/Cor](prints/morbidade_internacoes_04.jpeg)
+*Distribuição de internações por raça/cor*
+
+#### 2. Taxa de Mortalidade
+![Evolução Temporal](prints/app_taxa_mortalidade_01.jpeg)
+*Evolução temporal da taxa de mortalidade*
+
+#### 3. Relação IDSC
+![Correlação 1](prints/relacao_idsc_01.jpeg)
+*Análise de correlação entre indicadores*
+
+![Correlação 2](prints/relacao_idsc_02.jpeg)
+*Análise detalhada de correlações*
+
+#### 4. Análise Detalhada
+![Distribuição Geográfica](prints/morbidade_internacoes_05.jpeg)
+*Distribuição geográfica das internações*
+
+![Análise Temporal](prints/morbidade_internacoes_06.jpeg)
+*Análise temporal das internações*
+
+## Segurança
+
+1. **Credenciais e Tokens**
+   - Nunca comite credenciais ou tokens no código
+   - Utilize variáveis de ambiente para armazenar informações sensíveis
+   - Para tokens do Hugging Face, utilize o arquivo `.env` ou variáveis de ambiente do sistema
+
+2. **Dados Sensíveis**
+   - Os dados de saúde são sensíveis e devem ser tratados com cuidado
+   - Siga as diretrizes da LGPD para o tratamento de dados pessoais
+   - Mantenha os dados anonimizados quando possível
+
+3. **Ambiente de Desenvolvimento**
+   - Utilize ambientes virtuais para isolar as dependências
+   - Mantenha as dependências atualizadas
+   - Siga as boas práticas de segurança do Python
 
 ## Contribuições
 
