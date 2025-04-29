@@ -1,0 +1,13 @@
+pandas>=1.0.0
+requests>=2.0.0
+pexpect>=4.8.0
+ipython>=7.0.0
+jupyter>=1.0.0
+ipykernel>=6.0.0 
+xgboost
+prophet
+imblearn
+google
+streamlit>=1.30.0
+plotly>=5.18.0
+huggingface-hub
